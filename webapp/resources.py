@@ -102,3 +102,41 @@ class History(Resource):
         }
 
         return result
+
+
+class Commit(Resource):
+    def get(self, repositoryID):
+
+        queriedObjects = Edit.query.filter(Edit.repository_id == repositoryID).all()
+
+        commit_ids = []
+
+        for queriedObject in queriedObjects:
+            if queriedObject.commit_id not in commit_ids:
+                commit_ids.append(queriedObject.commit_id)
+
+        results = {
+            "status": "OK",
+            "commits": commit_ids
+        }
+
+        return results
+
+
+class Repository(Resource):
+    def get(self):
+
+        queriedObjects = Edit.query.all()
+
+        repository_ids = []
+
+        for queriedObject in queriedObjects:
+            if queriedObject.repository_id not in repository_ids:
+                repository_ids.append(queriedObject.repository_id)
+
+        results = {
+            "status": "OK",
+            "repositories": repository_ids
+        }
+
+        return results

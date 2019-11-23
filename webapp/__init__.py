@@ -5,7 +5,6 @@ from flask_cors import CORS
 
 import os
 
-
 app = Flask(__name__)
 CORS(app)
 
@@ -19,9 +18,12 @@ app.config["SECRET_KEY"] = "secret_key_hide_this_!!!".encode('utf8')
 db = SQLAlchemy(app)
 api = Api(app)
 
-from webapp.resources import File, History
+from webapp.resources import File, History, Commit, Repository
 
 api.add_resource(History, '/repository/<string:repositoryID>/commit/<string:commitID>/')
 api.add_resource(File, '/repository/<string:repositoryID>/commit/<string:commitID>/file/<string:fileID>/')
+
+api.add_resource(Commit, '/repository/<string:repositoryID>/')
+api.add_resource(Repository, '/')
 
 from webapp import routes
