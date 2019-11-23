@@ -61,6 +61,19 @@ class File(Resource):
             }
         }
 
+    def delete(self, repositoryID, commitID, fileID):
+        Edit.query.filter(Edit.repository_id == repositoryID)\
+            .filter(Edit.commit_id == commitID)\
+            .filter(Edit.file_id == fileID).delete()
+        db.session.commit()
+
+        result = {
+            "status": "OK",
+            "edit": []
+        }
+
+        return result
+
 
 class History(Resource):
     def get(self, repositoryID, commitID):
@@ -78,3 +91,14 @@ class History(Resource):
                 {"repository_id": obj.repository_id, "commit_id": obj.commit_id, "user_id": obj.user_id,
                  "file_id": obj.file_id, "timestamp": str(obj.timestamp)})
         return results
+
+    def delete(self, repositoryID, commitID):
+        Edit.query.filter(Edit.repository_id == repositoryID).filter(Edit.commit_id == commitID).delete()
+        db.session.commit()
+
+        result = {
+            "status": "OK",
+            "edit": []
+        }
+
+        return result
