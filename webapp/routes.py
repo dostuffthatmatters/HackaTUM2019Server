@@ -1,6 +1,7 @@
 from webapp import app
+from flask import render_template
 
-@app.route('/status')
-def hello_world():
-    return 'Running', 200
 
+@app.route("/")
+def visual():
+    return render_template("index.html")

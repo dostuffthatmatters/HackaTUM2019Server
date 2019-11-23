@@ -1,0 +1,23 @@
+@import '../config';
+
+.App {
+
+  .Content {
+    top: 4vw;
+    position: relative;
+    background-color: white;
+    width: 60vw;
+    min-height: calc(80vh - 4vw);
+    padding: 10vh 20vw;
+
+    .ChangeBox {
+      background-color: $gray-0;
+      width: 60vw;
+      height: 2.5vw;
+      border-radius: $border-radius;
+      margin-bottom: 0.5vw;
+    }
+  }
+
+}
+

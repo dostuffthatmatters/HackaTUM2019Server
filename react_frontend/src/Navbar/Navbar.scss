@@ -1,0 +1,56 @@
+@import '../config';
+
+.Navbar {
+    // Position
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    filter: drop-shadow(0 0 5px hsla(0, 0%, 0%, 0.5));
+
+    background-color: $theme-color;
+    width: 98vw;
+    height: 2vw;
+    padding: 1vw;
+    margin: 0;
+
+    font-size: 0;
+
+    div {
+        height: 2vw;
+        display: inline-block;
+        line-height: 2vw;
+        color: white;
+        font-size: 1.4vw;
+        font-weight: 500;
+    }
+
+    .PrevButton {
+        float: left;
+        cursor: pointer;
+        img {
+            width: 2vw;
+            height: 2vw;
+            vertical-align: top;
+        }
+    }
+
+    .Path {
+        float: left;
+        a {
+            color: $pink-contrast;
+            text-decoration: none;
+        }
+    }
+
+    .Commit, .Repository {
+        float: right;
+    }
+
+    .Repository {
+        margin-right: 2vw;
+    }
+
+  }

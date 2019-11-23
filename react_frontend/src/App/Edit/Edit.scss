@@ -1,0 +1,39 @@
+@import '../../config';
+
+.Content {
+
+    .Edit {
+        width: 60vw;
+        height: 2.5vw;
+        background-color: $gray-0;
+
+        font-size: 0;
+
+        margin-bottom: 0.5vw;
+        border-radius: $border-radius;
+
+        .Logo {
+            display: inline-block;
+            width: 2vw;
+            height: 2vw;
+            padding: 0.25vw;
+            vertical-align: top;
+
+            img {
+                width: 2vw;
+                height: 2vw;
+                vertical-align: top;
+            }
+        }
+
+        .Label {
+            display: inline-block;
+            width: 56.5vw;
+            height: 2vw;
+            padding: 0.25vw 0.5vw;
+            line-height: 2vw;
+            text-align: left;
+            font-size: 1.2vw;
+        }
+    }
+}
