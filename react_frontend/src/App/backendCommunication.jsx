@@ -87,8 +87,7 @@ export function BackendGET(url, params) {
             for (let key in params) {
                 if (typeof (params[key]) !== "string") {
                     query_string += key + "=";
-                    // eslint-disable-next-line
-                    params[key].forEach((element) => {
+                    params[key].forEach((element) =>{
                         query_string += element.toString() + ",";
                     });
                 } else {

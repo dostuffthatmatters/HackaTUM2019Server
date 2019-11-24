@@ -9,9 +9,10 @@
 @font-face { font-family: Panton; font-weight: 900; src: url('./fonts/Panton_900_Heavy.otf'); }
 
 $theme-color: #282c34;
-$pink-contrast: hsl(340, 100%, 50%);
-
 $text-color: #333333;
+
+$pink-contrast: hsl(340, 100%, 50%);
+$pink-contrast-transparent: hsla(340, 100%, 50%, 0.5);
 
 $gray-0: hsl(0, 0%, 95%);
 $gray-1: hsl(0, 0%, 90%);

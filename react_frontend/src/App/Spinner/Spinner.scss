@@ -1,0 +1,41 @@
+@import '../../config';
+
+$spinner-border-width: 3px;
+
+
+.Spinner {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    top: 49vh;
+    left: 49vw;
+
+    div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(2vw - 2* #{$spinner-border-width});
+        height: calc(2vw - 2* #{$spinner-border-width});
+        border-radius: 50%;
+        border: $spinner-border-width solid transparent;
+        animation: spinner infinite linear;
+    }
+
+    .Arc1 {
+        border-bottom-color: hsla(0, 0%, 100%, 0.5);
+        animation-duration: 0.8s;
+    }
+
+    .Arc2 {
+        border-right-color: hsla(0, 0%, 100%, 0.5);
+        animation-duration: 1.5s;
+    }
+}
+
+@keyframes spinner {
+      0% {transform: rotate(  0deg);}
+     25% {transform: rotate( 90deg);}
+     50% {transform: rotate(180deg);}
+     75% {transform: rotate(270deg);}
+    100% {transform: rotate(360deg);}
+}

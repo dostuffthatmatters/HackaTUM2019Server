@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0b252b525294f08a5e908f8d5d96235e",
+    "revision": "5fd3601da9db78bcff0d8a3c27a2261e",
     "url": "/static/react/../../templates/index.html"
   },
   {
-    "revision": "cea824d26f366c14be96",
-    "url": "/static/react/css/main.3833a9d5.chunk.css"
+    "revision": "80b7a3c4b6d88feb5255",
+    "url": "/static/react/css/main.763f38ec.chunk.css"
   },
   {
-    "revision": "571e1bdc13ec69cb60b8",
-    "url": "/static/react/js/2.b04e8b67.chunk.js"
+    "revision": "1b33fcd9347f1de47ea7",
+    "url": "/static/react/js/2.bc6ee088.chunk.js"
   },
   {
-    "revision": "cea824d26f366c14be96",
-    "url": "/static/react/js/main.2fe9f78d.chunk.js"
+    "revision": "80b7a3c4b6d88feb5255",
+    "url": "/static/react/js/main.a645e576.chunk.js"
   },
   {
     "revision": "577408341c4c91fc4acc",
@@ -22,6 +22,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "87285bb72a4104e4d5a3615df5149f75",
     "url": "/static/react/media/BackArrow.87285bb7.svg"
+  },
+  {
+    "revision": "d56da875339b4db6e2cc555c95de6f02",
+    "url": "/static/react/media/Commit-Logo.d56da875.svg"
   },
   {
     "revision": "d58ec36b83913a84e6221ab62c05bec6",
@@ -58,6 +62,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "04e8e2a41b41883db46436f78c0e471a",
     "url": "/static/react/media/Panton_900_Heavy.04e8e2a4.otf"
+  },
+  {
+    "revision": "fadbd09ba42117bd8a772c173d69f35c",
+    "url": "/static/react/media/edit_logo.fadbd09b.svg"
   },
   {
     "revision": "48f45c2e753ffac0576b56b80cb21b26",

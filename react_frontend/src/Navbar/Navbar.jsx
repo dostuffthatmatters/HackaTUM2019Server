@@ -10,56 +10,43 @@ export class Navbar extends Component {
 		super(props);
 
 		this.getPathBlock = this.getPathBlock.bind(this);
-		this.getPathString = this.getPathString.bind(this);
-	}
-
-	getPathString() {
-		let path_string = "/" + this.props.repository + "/" + this.props.commit;
-		for (let i=0; i<this.props.path.length; i++) {
-			path_string += "/" + this.props.path[i];
-		}
-		return path_string;
+		this.handlePrevClick = this.handlePrevClick.bind(this);
 	}
 
 	getPathBlock() {
-		let path_string = this.props.path.map((value, index) => (
+		return this.props.path.map((value, index) => (
 			<React.Fragment>
 				{index !== 0 && <div style={{whiteSpace: "pre"}}> / </div>}
-				<a href={this.getPathString()}>{value}</a>
+				<div onClick={() => this.handlePathClick(index)}>{value}</div>
 			</React.Fragment>
 		));
-		console.log(this.props.path);
-		console.log(path_string);
-		return path_string;
 	}
 
-	getPrevButton() {
-		let path_string = "/";
+	handlePathClick(index) {
+		let newPath = this.props.path.slice(0, index + 1);
+		console.log({oldPath: this.props.path, newPath: newPath});
+		this.props.changePath(this.props.repository, this.props.commit, newPath);
+	}
 
-		if (this.props.repository !== "" && this.props.commit !== "") {
-			path_string += this.props.repository + "/";
-			if (this.props.path.length !== 0) {
-				path_string += this.props.commit + "/";
-			}
+	handlePrevClick() {
+		if (this.props.commit === "") {
+			this.props.changePath("", "", []);
+		} else if (this.props.path.length === 0) {
+			this.props.changePath(this.props.repository, "", []);
+		} else {
+			this.props.path.pop();
+			this.props.changePath(this.props.repository, "", this.props.path);
 		}
-
-		for (let i=0; i<this.props.path.length - 1; i++) {
-			path_string += this.props.path[i] + "/";
-		}
-
-		console.log({path_string: path_string});
-
-		return (
-			<div className="PrevButton" onClick={() => window.open("/visual" + path_string, "_self")}>
-				<img src={BackArrow} alt="Go Back"/>
-			</div>
-		);
 	}
 
 	render() {
 		return (
 			<div className="Navbar">
-				{this.props.repository !== "" && this.getPrevButton()}
+				{this.props.repository !== "" && (
+					<div className="PrevButton" onClick={this.handlePrevClick}>
+						<img src={BackArrow} alt="Go Back"/>
+					</div>
+				)}
 				<div className="Path">{this.getPathBlock()}</div>
 				<div className="Commit">
 					<strong>Commit:</strong> {this.props.commit !== "" ? this.props.commit : "-"}
