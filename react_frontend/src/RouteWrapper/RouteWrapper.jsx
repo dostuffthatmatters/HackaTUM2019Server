@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import App from '../App/App';
-import {BackendGET} from "./backendCommunication";
+import {BackendGET, BackendDELETE} from "./backendCommunication";
 import {Navbar} from "../Navbar/Navbar";
 
 export class RouteWrapper extends Component {
@@ -19,7 +19,9 @@ export class RouteWrapper extends Component {
 		this.changePath = this.changePath.bind(this);
 
 		this.setCurrentRecords = this.setCurrentRecords.bind(this);
+
 		this.triggerRecordUpdate = this.triggerRecordUpdate.bind(this);
+		this.triggerRemove = this.triggerRemove.bind(this);
 	}
 
 	componentWillMount() {
@@ -108,7 +110,8 @@ export class RouteWrapper extends Component {
 		this.setState({loading: true});
 
 		// let url = "http://127.0.0.1:5000/fetchall";
-		let url = "https://hackatum2019.herokuapp.com/fetchall";
+		// let url = "https://hackatum2019.herokuapp.com/fetchall";
+		let url = "/fetchall";
 
 		BackendGET(url, {}).then((resolveMessage) => {
 			let resolveJSON = JSON.parse(resolveMessage);
@@ -122,6 +125,31 @@ export class RouteWrapper extends Component {
 		});
 	}
 
+	triggerRemove() {
+		// This method already knows what to
+		// remove because it knows the current path
+
+		this.setState({loading: true});
+
+		// let url = "http://127.0.0.1:5000/";
+		// let url = "https://hackatum2019.herokuapp.com/";
+		let url = "/";
+
+		if (this.state.repository !== "") {
+			url += "repository/" + this.state.repository + "/";
+			if (this.state.commit !== "") {
+				url += "commit/" + this.state.commit;
+			}
+		}
+
+		BackendDELETE(url, {}).then((resolveMessage) => {
+			this.setCurrentRecords();
+			this.changePath("", "", []);
+		}).catch((rejectMessage) => {
+			console.log("Nothing Here!");
+			this.setState({loading: false});
+		});
+	}
 	render() {
 		return (
 			<React.Fragment>
@@ -135,6 +163,7 @@ export class RouteWrapper extends Component {
 					path={this.state.path}
 					changePath={this.changePath}
 					triggerRecordUpdate={this.triggerRecordUpdate}
+					triggerRemove={this.triggerRemove}
 					records={this.state.records}
 					loading={this.state.loading}/>
 			</React.Fragment>

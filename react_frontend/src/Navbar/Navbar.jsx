@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import BackArrow from "./images/BackArrow.svg"
+import MergeInPeaceLogo from './images/MergeInPeaceLogo.png';
 
 import './Navbar.scss';
 
@@ -54,6 +55,11 @@ export class Navbar extends Component {
 				<div className="Repository">
 					<strong>Repository:</strong> {this.props.repository !== "" ? this.props.repository : "-"}
 				</div>
+				{this.props.commit === "" && (
+					<div className="MergeInPeaceLogo">
+						<img src={MergeInPeaceLogo} alt="Merge in Peace Logo"/>
+					</div>
+				)}
 			</div>
 		);
 	}

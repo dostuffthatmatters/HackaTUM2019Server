@@ -1,0 +1,74 @@
+@import '../../config';
+
+
+.ButtonRow {
+    height: 2vw;
+
+    a, .Button {
+        // Text Style
+        font-size: 1.1vw;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .Button {
+        // Position inside ButtonRow
+        display: inline-flex;
+        justify-content: center;
+
+        // Size
+        height: 2vw;
+        line-height: 2vw;
+        min-width: 4vw;
+        padding: 0 0.75vw;
+        margin: 0 2vw;
+
+        // Appearance
+        border-radius: $border-radius;
+        cursor: pointer;
+
+        // Options
+        @include disable-text-selection;
+    }
+
+    .ButtonWhite {
+        background-color: white;
+        color: $text-color;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    .ButtonPink {
+        background-color: $pink-contrast;
+        color: white;
+        &:hover {
+            background-color: $pink-contrast-dark;
+        }
+    }
+
+    .Icon {
+        display: inline-flex;
+        justify-content: center;
+
+        width: 2vw;
+        height: 2vw;
+        vertical-align: top;
+
+        line-height: 2vw;
+
+        padding: 0;
+        margin: 0 2vw;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $gray-0;
+        }
+
+        img {
+            width: 2vw;
+            height: 2vw;
+            vertical-align: top;
+        }
+    }
+}

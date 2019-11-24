@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/static/react/css/main.763f38ec.chunk.css",
-    "main.js": "/static/react/js/main.02fcc592.chunk.js",
-    "main.js.map": "/static/react/js/main.02fcc592.chunk.js.map",
+    "main.css": "/static/react/css/main.e66938be.chunk.css",
+    "main.js": "/static/react/js/main.6607ecd2.chunk.js",
+    "main.js.map": "/static/react/js/main.6607ecd2.chunk.js.map",
     "runtime-main.js": "/static/react/js/runtime-main.1a0087b2.js",
     "runtime-main.js.map": "/static/react/js/runtime-main.1a0087b2.js.map",
-    "js/2.bc6ee088.chunk.js": "/static/react/js/2.bc6ee088.chunk.js",
-    "js/2.bc6ee088.chunk.js.map": "/static/react/js/2.bc6ee088.chunk.js.map",
+    "js/2.7b0c2992.chunk.js": "/static/react/js/2.7b0c2992.chunk.js",
+    "js/2.7b0c2992.chunk.js.map": "/static/react/js/2.7b0c2992.chunk.js.map",
     "../../templates/index.html": "/static/react/../../templates/index.html",
-    "css/main.763f38ec.chunk.css.map": "/static/react/css/main.763f38ec.chunk.css.map",
+    "css/main.e66938be.chunk.css.map": "/static/react/css/main.e66938be.chunk.css.map",
     "media/BackArrow.svg": "/static/react/media/BackArrow.87285bb7.svg",
     "media/Commit-Logo.svg": "/static/react/media/Commit-Logo.d56da875.svg",
+    "media/MergeInPeaceLogo.png": "/static/react/media/MergeInPeaceLogo.a562bed7.png",
     "media/index.scss": "/static/react/media/Panton_900_Heavy.04e8e2a4.otf",
     "media/edit_logo.svg": "/static/react/media/edit_logo.fadbd09b.svg",
     "media/git_logo.svg": "/static/react/media/git_logo.48f45c2e.svg",
-    "precache-manifest.b823165c1c9aa6dcc6b78014d9417689.js": "/static/react/precache-manifest.b823165c1c9aa6dcc6b78014d9417689.js",
+    "precache-manifest.082e53b2ac595f91a7113dd7339ef599.js": "/static/react/precache-manifest.082e53b2ac595f91a7113dd7339ef599.js",
     "service-worker.js": "/static/react/service-worker.js"
   },
   "entrypoints": [
     "js/runtime-main.1a0087b2.js",
-    "js/2.bc6ee088.chunk.js",
-    "css/main.763f38ec.chunk.css",
-    "js/main.02fcc592.chunk.js"
+    "js/2.7b0c2992.chunk.js",
+    "css/main.e66938be.chunk.css",
+    "js/main.6607ecd2.chunk.js"
   ]
 }

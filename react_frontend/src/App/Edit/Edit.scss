@@ -27,12 +27,25 @@
 
         .Label {
             display: inline-block;
-            width: 56.5vw;
             height: 2vw;
-            padding: 0.25vw 0.5vw;
             line-height: 2vw;
-            text-align: left;
             font-size: 1.2vw;
+        }
+
+        .Label1 {
+            display: inline-block;
+            width: 30vw;
+            padding: 0.25vw 0 0.25vw 0.5vw;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .Label2 {
+            display: inline-block;
+            width: 26.5vw;
+            padding: 0.25vw 0.5vw 0.25vw 0;
+            text-align: right;
+            font-weight: 600;
         }
     }
 }

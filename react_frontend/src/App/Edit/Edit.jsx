@@ -8,7 +8,8 @@ export class Edit extends Component {
 		return (
 			<div className="Edit">
 				<img className="Logo" src={EditLogo} alt="Git Logo"/>
-				<div className="Label">{this.props.editObject.file_id.replace(/___/g, "/")}(By {this.props.editObject.user_id})</div>
+				<div className="Label Label1">{this.props.editObject.file_id.replace(/___/g, "/")}</div>
+				<div className="Label Label2">{this.props.editObject.user_id}</div>
 			</div>
 		);
 	}

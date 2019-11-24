@@ -2,22 +2,61 @@
 
 .App {
 
-  .Content {
-    top: 4vw;
-    position: relative;
-    background-color: white;
-    width: 60vw;
-    min-height: calc(80vh - 4vw);
-    padding: 10vh 20vw;
+    .Content {
+        top: 4vw;
+        position: relative;
+        background-color: white;
+        width: 60vw;
+        min-height: calc(80vh - 4vw);
+        padding: 10vh 20vw;
 
-    .ChangeBox {
-      background-color: $gray-0;
-      width: 60vw;
-      height: 2.5vw;
-      border-radius: $border-radius;
-      margin-bottom: 0.5vw;
+        .ChangeBox {
+            background-color: $gray-0;
+            width: 60vw;
+            height: 2.5vw;
+            border-radius: $border-radius;
+            margin-bottom: 0.5vw;
+        }
+
+        .ButtonWrapper {
+            font-size: 0;
+            margin-bottom: 2vw;
+
+            .Icon {
+                position: relative;
+                display: inline-block;
+                width: 2vw;
+                height: 2vw;
+                vertical-align: top;
+
+                border-radius: $border-radius;
+                cursor: pointer;
+
+                svg {
+                    position: relative;
+                    width: 2vw;
+                    height: 2vw;
+                    vertical-align: top;
+                    fill: $theme-color;
+                }
+
+                &:hover svg {
+                    fill: $pink-contrast;
+                }
+            }
+
+            .IconRefresh {
+                margin: 0 0.5vw 0 27.5vw;
+                padding: 0;
+            }
+
+            .IconRemove {
+                margin: 0 27.5vw 0 0.5vw;
+                padding: 0;
+            }
+        }
+
     }
-  }
 
 }
 

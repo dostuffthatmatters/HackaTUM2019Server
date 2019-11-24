@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "78d9145c2a3fa5d856148437901c6eb6",
+    "revision": "a6a0da1782e6cbe0586ce362d23749ae",
     "url": "/static/react/../../templates/index.html"
   },
   {
-    "revision": "6280c5590999f4d01990",
-    "url": "/static/react/css/main.763f38ec.chunk.css"
+    "revision": "2e314e0e7fbbeee02138",
+    "url": "/static/react/css/main.e66938be.chunk.css"
   },
   {
-    "revision": "1b33fcd9347f1de47ea7",
-    "url": "/static/react/js/2.bc6ee088.chunk.js"
+    "revision": "8ae3c1e816e158a9e440",
+    "url": "/static/react/js/2.7b0c2992.chunk.js"
   },
   {
-    "revision": "6280c5590999f4d01990",
-    "url": "/static/react/js/main.02fcc592.chunk.js"
+    "revision": "2e314e0e7fbbeee02138",
+    "url": "/static/react/js/main.6607ecd2.chunk.js"
   },
   {
     "revision": "577408341c4c91fc4acc",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d56da875339b4db6e2cc555c95de6f02",
     "url": "/static/react/media/Commit-Logo.d56da875.svg"
+  },
+  {
+    "revision": "a562bed74d526ab58e54bc5c7373e2a3",
+    "url": "/static/react/media/MergeInPeaceLogo.a562bed7.png"
   },
   {
     "revision": "d58ec36b83913a84e6221ab62c05bec6",

@@ -18,7 +18,7 @@ def visual(path):
 def fetch_all():
     edits = Edit.query.all()
 
-    time.sleep(2)
+    time.sleep(0.25)
 
     repositories = {
         "count": 0,
@@ -74,6 +74,8 @@ def fetch_all():
                 repositories["records"][repository_id]["records"][commit_id] = edits
 
     return {"records": repositories}
+
+
 
 
 

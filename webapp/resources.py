@@ -122,6 +122,10 @@ class Commit(Resource):
 
         return results
 
+    def delete(self, repositoryID):
+        Edit.query.filter(Edit.repository_id == repositoryID).delete()
+        db.session.commit()
+
 
 class Repository(Resource):
     def get(self):
@@ -140,3 +144,8 @@ class Repository(Resource):
         }
 
         return results
+
+    def delete(self):
+        Edit.query.delete()
+        db.session.commit()
+

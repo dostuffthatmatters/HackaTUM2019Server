@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 
 import './App.scss';
+import '../Elements/Button/Button.scss';
 
 import {Repository} from "./Repository/Repository";
 import {Commit} from "./Commit/Commit";
 import {Edit} from "./Edit/Edit";
-import {Spinner} from "./Spinner/Spinner";
+import {Spinner} from "../Elements/Spinner/Spinner";
+
+import {ICONS} from "./images/ICONS";
 
 class App extends Component {
 
@@ -24,7 +27,7 @@ class App extends Component {
 	}
 
 	getRepoContent() {
-		let content;
+		let content, buttonrow;
 
 		console.log({page: "repo", records: this.props.records});
 
@@ -38,11 +41,30 @@ class App extends Component {
 				<Repository name={value} changePath={this.props.changePath}/>
 			));
 		}
-		return <div className="Content">{content}</div>;
+
+		buttonrow = (
+			<div className="ButtonWrapper">
+				<div className="Icon IconRefresh"
+				     onClick={() => window.location.reload()}>
+					{ICONS.refresh}
+				</div>
+				<div className="Icon IconRemove"
+				     onClick={this.props.triggerRemove}>
+					{ICONS.remove}
+				</div>
+			</div>
+		);
+
+		return (
+			<div className="Content">
+				{buttonrow}
+				{content}
+			</div>
+		);
 	}
 
 	getCommitContent() {
-		let content;
+		let content, buttonrow;
 
 		console.log({page: "commit", records: this.props.records});
 		//let elements = this.props.records["records"][this.props.repository];
@@ -57,11 +79,30 @@ class App extends Component {
 				<Commit hash={value} changePath={this.props.changePath} repository={this.props.repository}/>
 			));
 		}
-		return <div className="Content">{content}</div>;
+
+		buttonrow = (
+			<div className="ButtonWrapper">
+				<div className="Icon IconRefresh"
+				     onClick={() => window.location.reload()}>
+					{ICONS.refresh}
+				</div>
+				<div className="Icon IconRemove"
+				     onClick={this.props.triggerRemove}>
+					{ICONS.remove}
+				</div>
+			</div>
+		);
+
+		return (
+			<div className="Content">
+				{buttonrow}
+				{content}
+			</div>
+		);
 	}
 
 	getEditContent() {
-		let content;
+		let content, buttonrow;
 
 		console.log({page: "edit", records: this.props.records});
 
@@ -75,7 +116,26 @@ class App extends Component {
 				<Edit editObject={element}/>
 			));
 		}
-		return <div className="Content">{content}</div>;
+
+		buttonrow = (
+			<div className="ButtonWrapper">
+				<div className="Icon IconRefresh"
+				     onClick={() => window.location.reload()}>
+					{ICONS.refresh}
+				</div>
+				<div className="Icon IconRemove"
+				     onClick={this.props.triggerRemove}>
+					{ICONS.remove}
+				</div>
+			</div>
+		);
+
+		return (
+			<div className="Content">
+				{buttonrow}
+				{content}
+			</div>
+		);
 	}
 
 	render() {
