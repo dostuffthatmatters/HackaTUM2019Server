@@ -45,41 +45,59 @@ export class RouteWrapper extends Component {
 		});
 	}
 
-	static getPathString(repository, commit, path) {
-        let pathString = "/";
-        if (repository !== "") {
-        	pathString += repository + "/";
-        	if (commit !== "") {
-        	    pathString += commit + "/";
-        	    if (path.length !== 0) {
-        	    	path.forEach(element => {
-                        pathString += element + "/";
-                    });
-	            }
-            }
-        }
-        return pathString;
-    }
-
-    changePath(repository, commit, path) {
-
-        let pathString = "/visual" + RouteWrapper.getPathString(repository, commit, path);
-        console.log({pathToBePushed: pathString});
-        window.history.pushState({
-	        repository: repository,
-	        commit: commit,
-	        path: path
-        }, "", pathString);
-
-        this.setState({
-	        repository: repository,
-	        commit: commit,
-	        path: path
-        });
-    }
-
 	componentDidMount() {
+		window.addEventListener('popstate', event => {
+			if (event.state !== null) {
+				if ((event.state.repository !== null) && (event.state.commit !== null) && (event.state.path !== null)) {
+					this.setState({
+						repository: event.state.repository,
+						commit: event.state.commit,
+						path: event.state.path
+					});
+					return;
+				}
+			}
+			this.setState({
+				repository: "",
+				commit: "",
+				path: []
+			});
+		});
+
 		this.setCurrentRecords();
+	}
+
+	static getPathString(repository, commit, path) {
+		let pathString = "/";
+		if (repository !== "") {
+			pathString += repository + "/";
+			if (commit !== "") {
+				pathString += commit + "/";
+				if (path.length !== 0) {
+					path.forEach(element => {
+						pathString += element + "/";
+					});
+				}
+			}
+		}
+		return pathString;
+	}
+
+	changePath(repository, commit, path) {
+
+		let pathString = "/visual" + RouteWrapper.getPathString(repository, commit, path);
+		console.log({pathToBePushed: pathString});
+		window.history.pushState({
+			repository: repository,
+			commit: commit,
+			path: path
+		}, "", pathString);
+
+		this.setState({
+			repository: repository,
+			commit: commit,
+			path: path
+		});
 	}
 
 	triggerRecordUpdate() {
@@ -109,15 +127,15 @@ export class RouteWrapper extends Component {
 			<React.Fragment>
 				<Navbar repository={this.state.repository}
 				        commit={this.state.commit}
-						path={this.state.path}
-						changePath={this.changePath}/>
+				        path={this.state.path}
+				        changePath={this.changePath}/>
 				<App
 					repository={this.state.repository}
-			        commit={this.state.commit}
-		            path={this.state.path}
-				    changePath={this.changePath}
-				    triggerRecordUpdate={this.triggerRecordUpdate}
-			        records={this.state.records}
+					commit={this.state.commit}
+					path={this.state.path}
+					changePath={this.changePath}
+					triggerRecordUpdate={this.triggerRecordUpdate}
+					records={this.state.records}
 					loading={this.state.loading}/>
 			</React.Fragment>
 		);

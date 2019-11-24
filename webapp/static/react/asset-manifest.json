@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/react/css/main.763f38ec.chunk.css",
-    "main.js": "/static/react/js/main.a645e576.chunk.js",
-    "main.js.map": "/static/react/js/main.a645e576.chunk.js.map",
+    "main.js": "/static/react/js/main.02fcc592.chunk.js",
+    "main.js.map": "/static/react/js/main.02fcc592.chunk.js.map",
     "runtime-main.js": "/static/react/js/runtime-main.1a0087b2.js",
     "runtime-main.js.map": "/static/react/js/runtime-main.1a0087b2.js.map",
     "js/2.bc6ee088.chunk.js": "/static/react/js/2.bc6ee088.chunk.js",
@@ -14,13 +14,13 @@
     "media/index.scss": "/static/react/media/Panton_900_Heavy.04e8e2a4.otf",
     "media/edit_logo.svg": "/static/react/media/edit_logo.fadbd09b.svg",
     "media/git_logo.svg": "/static/react/media/git_logo.48f45c2e.svg",
-    "precache-manifest.79b7229c7d0de65e246d53164243a984.js": "/static/react/precache-manifest.79b7229c7d0de65e246d53164243a984.js",
+    "precache-manifest.b823165c1c9aa6dcc6b78014d9417689.js": "/static/react/precache-manifest.b823165c1c9aa6dcc6b78014d9417689.js",
     "service-worker.js": "/static/react/service-worker.js"
   },
   "entrypoints": [
     "js/runtime-main.1a0087b2.js",
     "js/2.bc6ee088.chunk.js",
     "css/main.763f38ec.chunk.css",
-    "js/main.a645e576.chunk.js"
+    "js/main.02fcc592.chunk.js"
   ]
 }
