@@ -1,7 +1,9 @@
 flask_env
 *.sqlite3
 
-
+react_frontend/config
+react_frontend/node_modules
+react_frontend/scripts
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
