@@ -50,7 +50,7 @@ export class Navbar extends Component {
 		console.log({path_string: path_string});
 
 		return (
-			<div className="PrevButton" onClick={() => window.open(path_string, "_self")}>
+			<div className="PrevButton" onClick={() => window.open("/visual" + path_string, "_self")}>
 				<img src={BackArrow} alt="Go Back"/>
 			</div>
 		);

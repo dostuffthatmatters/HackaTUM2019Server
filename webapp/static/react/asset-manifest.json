@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/react/css/main.3833a9d5.chunk.css",
+    "main.js": "/static/react/js/main.2fe9f78d.chunk.js",
+    "main.js.map": "/static/react/js/main.2fe9f78d.chunk.js.map",
+    "runtime-main.js": "/static/react/js/runtime-main.1a0087b2.js",
+    "runtime-main.js.map": "/static/react/js/runtime-main.1a0087b2.js.map",
+    "js/2.b04e8b67.chunk.js": "/static/react/js/2.b04e8b67.chunk.js",
+    "js/2.b04e8b67.chunk.js.map": "/static/react/js/2.b04e8b67.chunk.js.map",
+    "../../templates/index.html": "/static/react/../../templates/index.html",
+    "css/main.3833a9d5.chunk.css.map": "/static/react/css/main.3833a9d5.chunk.css.map",
+    "media/BackArrow.svg": "/static/react/media/BackArrow.87285bb7.svg",
+    "media/index.scss": "/static/react/media/Panton_900_Heavy.04e8e2a4.otf",
+    "media/git_logo.svg": "/static/react/media/git_logo.48f45c2e.svg",
+    "precache-manifest.8499be8a748b3e9eba16ded6baa0142d.js": "/static/react/precache-manifest.8499be8a748b3e9eba16ded6baa0142d.js",
+    "service-worker.js": "/static/react/service-worker.js"
+  },
+  "entrypoints": [
+    "js/runtime-main.1a0087b2.js",
+    "js/2.b04e8b67.chunk.js",
+    "css/main.3833a9d5.chunk.css",
+    "js/main.2fe9f78d.chunk.js"
+  ]
+}

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import './App.scss';
 import {Navbar} from "../Navbar/Navbar";
-import {BackendGET} from "./backendCommunication";
+import {BackendGET} from "../RouteWrapper/backendCommunication";
 
 import {Repository} from "./Repository/Repository";
 import {Commit} from "./Commit/Commit";
@@ -59,35 +59,6 @@ class App extends Component {
 		});
 	}
 
-	getDatabaseLink() {
-		let url = "https://hackatum2019.herokuapp.com/";
-
-		if (this.props.repository === "") {
-			return url;
-		}
-		url += "repository/" + this.props.repository + "/";
-
-		if (this.props.commit === "") {
-			return url;
-		}
-		url += "commit/" + this.props.commit + "/";
-
-		if (this.props.path.length === 0) {
-			return url;
-		}
-		url += "file/" + this.getBackendPathString() + "/";
-
-		return url;
-	}
-
-	getBackendPathString() {
-		let path_string = "";
-		for (let i = 0; i < this.props.path.length; i++) {
-			path_string += "___" + this.props.path[i];
-		}
-		return path_string;
-	}
-
 	getRepoContent() {
 		let content;
 
@@ -103,6 +74,9 @@ class App extends Component {
 
 	getCommitContent() {
 		let content;
+
+		let elements = this.props.records["records"][this.props.repository];
+		console.log(elements);
 
 		if (this.state.commits.length === 0) {
 			content = <div className="Empty">Not keeping track of any commits</div>;
@@ -121,7 +95,7 @@ class App extends Component {
 			content = <div className="Empty">Not keeping track of any edits</div>;
 		} else {
 			content = this.state.edits.map((value, index) => (
-				<Edit name={value["file_id"]} href={window.location.pathname + "/" + this.props.repository + "/" + value}/>
+				<Edit name={value["file_id"]}/>
 			));
 		}
 		return <div className="Content">{content}</div>;
@@ -140,14 +114,22 @@ class App extends Component {
 
 		return (
 			<div className="App">
-				<Navbar path={this.props.path}
-				        repository={this.props.repository}
-				        commit={this.props.commit}/>
 				{page_content}
 			</div>
 
 		);
 	}
+}
+
+function countProperties(obj) {
+    let count = 0;
+
+    for(let prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            ++count;
+    }
+
+    return count;
 }
 
 export default App;
